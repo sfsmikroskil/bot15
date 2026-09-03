@@ -1,4 +1,4 @@
-name: Bot Form 
+name: Bot Form 15
 
 on:
   # Memungkinkan bot dijalankan manual dari tombol di GitHub
@@ -45,3 +45,9 @@ jobs:
       - name: Jalankan Bot Python
         run: python bot.py
 
+      - name: Simpan Preview Screenshot
+        if: always() # Tetap simpan foto meskipun skrip error di tengah jalan
+        uses: actions/upload-artifact@v4
+        with:
+          name: bot-screenshots
+          path: "*.png"
