@@ -16,7 +16,6 @@ def getHP():
 
 async def main(nama, email, c):
     async with async_playwright() as p:
-        email = f"r{email}"
         noHP = getHP()
         browser = await p.chromium.launch(headless=True)
         page = await browser.new_page(viewport={'width': 720, 'height': 1280})
@@ -61,7 +60,7 @@ async def main(nama, email, c):
         await page.wait_for_timeout(2000)
         await page.mouse.click(277, 654)
         await page.wait_for_timeout(1000)
-        #await page.screenshot(path=f"{c}_5hall.png")
+        #await page.screenshot(path=f"{c}_4hall.png")
         # 7. Filter booth
         await page.mouse.click(420, 30)
         await page.wait_for_timeout(1000)
@@ -80,7 +79,7 @@ async def main(nama, email, c):
         await browser.close()
 
 if __name__ == "__main__":
-    jumlah = 200
+    jumlah = 500
     mulaiDari = 0
     print("Mulai...")
     for i in range (mulaiDari, mulaiDari+jumlah):
