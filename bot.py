@@ -70,7 +70,9 @@ async def main(nama, email, c):
         #await page.screenshot(path=f"{c}_6booth.png")
         await page.keyboard.press("Enter")
         await page.wait_for_timeout(2000)
-        await page.mouse.click(601, 516)
+        await page.keyboard.press("Enter")
+        await page.wait_for_timeout(2000)
+        await page.mouse.click(170, 662)
         await page.wait_for_timeout(2000)
         if(c==0):
             await page.screenshot(path=f"{c}_7booth.png")
