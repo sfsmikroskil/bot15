@@ -37,7 +37,7 @@ async def main(nama, email, c):
         await page.check("input.form-check-input")
         
         await page.wait_for_timeout(1000)
-        if(c==0 or True):
+        if(c==0):
             await page.screenshot(path=f"{c}_0reg.png")
         # 3. Regis
         await page.click("button[type='submit']")
@@ -66,19 +66,18 @@ async def main(nama, email, c):
         await page.wait_for_timeout(1000)
         #await page.screenshot(path=f"{c}_5filter.png")
         await page.keyboard.type("UKPBJ KEMENTERIAN IM")
-        await page.wait_for_timeout(1000)
+        await page.wait_for_timeout(3000)
         #await page.screenshot(path=f"{c}_6booth.png")
         await page.keyboard.press("Enter")
-        await page.wait_for_timeout(2000)
+        await page.wait_for_timeout(1000)
         await page.keyboard.press("Enter")
         await page.wait_for_timeout(2000)
-        await page.keyboard.press("Enter")
+        #await page.mouse.click(357, 624) #video
+        await page.mouse.click(170, 662) #poster
         await page.wait_for_timeout(2000)
         await page.mouse.click(170, 662)
         await page.wait_for_timeout(2000)
-        await page.mouse.click(170, 662)
-        await page.wait_for_timeout(2000)
-        if(c==0 or True):
+        if(c==0):
             await page.screenshot(path=f"{c}_7booth.png")
 
         print(f"Akun : ({c}) {nama} | Selesai")
